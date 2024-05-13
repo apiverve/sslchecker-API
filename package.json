@@ -1,0 +1,32 @@
+{
+  "name": "@apiverve/sslchecker",
+  "version": "1.0.0",
+  "description": "SSL Checker is a simple tool for checking SSL certificates. It returns the SSL certificate details of a website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apiverve/sslchecker-API.git"
+  },
+  "keywords": [
+    "ssl checker"," ssl checker api"," ssl checker tool"," ssl checker software"," ssl checker service"," ssl checker library"," ssl checker sdk"," ssl checker code"," ssl checker script"," ssl checker program"," ssl checker application"," ssl checker app"," ssl checker utility"," ssl checker helper"," ssl checker helper tool"," ssl checker helper software"," ssl checker helper service"," ssl checker helper library"," ssl checker helper sdk"," ssl checker helper code"," ssl checker helper script"," ssl checker helper program"," ssl checker helper application"," ssl checker helper app"," ssl checker helper utility"," ssl checker helper"
+  ],
+  "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apiverve/sslchecker-API/issues"
+  },
+  "homepage": "https://github.com/apiverve/sslchecker-API",
+  "devDependencies": {
+    "mocha": "^2.3.4",
+    "chai": "^3.4.1",
+    "dotenv": "^2.0.0"
+  },
+  "dependencies": {
+    "node-fetch": "3.3.2",
+    "promise": "^7.1.1",
+    "request": "^2.69.0"
+  }
+}
