@@ -11,7 +11,7 @@
     "url": "git+https://github.com/apiverve/sslchecker-API.git"
   },
   "keywords": [
-    "ssl checker"," ssl checker api"," ssl checker tool"," ssl checker software"," ssl checker service"," ssl checker library"," ssl checker sdk"," ssl checker code"," ssl checker script"," ssl checker program"," ssl checker application"," ssl checker app"," ssl checker utility"," ssl checker helper"," ssl checker helper tool"," ssl checker helper software"," ssl checker helper service"," ssl checker helper library"," ssl checker helper sdk"," ssl checker helper code"," ssl checker helper script"," ssl checker helper program"," ssl checker helper application"," ssl checker helper app"," ssl checker helper utility"," ssl checker helper"
+    "ssl checker","ssl checker api","ssl checker tool","ssl checker software","ssl checker service"
   ],
   "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
   "license": "MIT",
@@ -27,6 +27,6 @@
   "dependencies": {
     "node-fetch": "3.3.2",
     "promise": "^7.1.1",
-    "request": "^2.69.0"
+    "axios": "^0.15.3"
   }
 }
