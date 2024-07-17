@@ -33,7 +33,7 @@ class sslcheckerWrapper {
             query = {};
         }
 
-        var requiredParams = ["url"];
+        var requiredParams = ["domain"];
         if (requiredParams.length > 0) {
             for (var i = 0; i < requiredParams.length; i++) {
                 if (!query[requiredParams[i]]) {
@@ -42,7 +42,7 @@ class sslcheckerWrapper {
             }
         }
 
-        const method = 'POST';
+        const method = 'GET';
         const url = method === 'POST' ? this.baseURL : this.constructURL(query);
 
         try {
