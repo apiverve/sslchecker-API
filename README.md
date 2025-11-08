@@ -1,5 +1,4 @@
-SSL Certificate Checker API
-============
+# SSL Certificate Checker API
 
 SSL Checker is a simple tool for checking SSL certificates. It returns the SSL certificate details of a website.
 
@@ -7,54 +6,62 @@ SSL Checker is a simple tool for checking SSL certificates. It returns the SSL c
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Javascript Wrapper for the [SSL Certificate Checker API](https://apiverve.com/marketplace/api/sslchecker)
+This is a Javascript Wrapper for the [SSL Certificate Checker API](https://apiverve.com/marketplace/sslchecker)
 
 ---
 
 ## Installation
-	npm install @apiverve/sslchecker --save
+
+Using npm:
+```shell
+npm install @apiverve/sslchecker
+```
+
+Using yarn:
+```shell
+yarn add @apiverve/sslchecker
+```
 
 ---
 
 ## Configuration
 
-Before using the sslchecker API client, you have to setup your account and obtain your API Key.  
+Before using the SSL Certificate Checker API client, you have to setup your account and obtain your API Key.
 You can get it by signing up at [https://apiverve.com](https://apiverve.com)
 
 ---
 
-## Usage
+## Quick Start
 
-The SSL Certificate Checker API documentation is found here: [https://docs.apiverve.com/api/sslchecker](https://docs.apiverve.com/api/sslchecker).  
+[Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart)
+
+The SSL Certificate Checker API documentation is found here: [https://docs.apiverve.com/ref/sslchecker](https://docs.apiverve.com/ref/sslchecker).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
-```
-var sslcheckerAPI = require('@apiverve/sslchecker');
-var api = new sslcheckerAPI({
-    api_key: [YOUR_API_KEY],
-    secure: true //(Optional, defaults to true)
+```javascript
+const sslcheckerAPI = require('@apiverve/sslchecker');
+const api = new sslcheckerAPI({
+    api_key: '[YOUR_API_KEY]'
 });
 ```
 
 ---
 
+## Usage
+
+---
 
 ### Perform Request
-Using the API client, you can perform requests to the API.
 
-###### Define Query
+Using the API is simple. All you have to do is make a request. The API will return a response with the data you requested.
 
-```
+```javascript
 var query = {
-  domain: ""
+  domain: "ebay.com"
 };
-```
 
-###### Simple Request (using Callback)
-
-```
 api.execute(query, function (error, data) {
     if (error) {
         return console.error(error);
@@ -64,9 +71,52 @@ api.execute(query, function (error, data) {
 });
 ```
 
-###### Example Response
+---
 
+### Using Promises
+
+You can also use promises to make requests. The API returns a promise that you can use to handle the response.
+
+```javascript
+var query = {
+  domain: "ebay.com"
+};
+
+api.execute(query)
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error(error);
+    });
 ```
+
+---
+
+### Using Async/Await
+
+You can also use async/await to make requests. The API returns a promise that you can use to handle the response.
+
+```javascript
+async function makeRequest() {
+    var query = {
+  domain: "ebay.com"
+};
+
+    try {
+        const data = await api.execute(query);
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+```
+
+---
+
+## Example Response
+
+```json
 {
   "status": "ok",
   "error": null,
@@ -99,8 +149,7 @@ api.execute(query, function (error, data) {
     "valid_to": "Jan  8 23:59:59 2026 GMT",
     "serialNumber": "A89BCEBA167A33593AD3202C7FE2C420",
     "domain": "ebay.com"
-  },
-  "code": 200
+  }
 }
 ```
 
@@ -113,6 +162,7 @@ Need any assistance? [Get in touch with Customer Support](https://apiverve.com/c
 ---
 
 ## Updates
+
 Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Twitter.
 
 ---
