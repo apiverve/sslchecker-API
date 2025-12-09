@@ -1,0 +1,87 @@
+openapi: 3.0.4
+info:
+  title: SSL Certificate Checker
+  description: SSL Checker is a simple tool for checking SSL certificates. It returns the SSL certificate details of a website.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/sslchecker:
+    get:
+      summary: Check SSL Certificate
+      description: SSL Checker is a simple tool for checking SSL certificates. It returns the SSL certificate details of a website.
+      operationId: sslchecker
+      parameters:
+      - name: domain
+        in: query
+        schema:
+          type: string
+        required: true
+        description: The domain of the website to check the SSL certificate of
+        example: ebay.com
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  subject:
+                    C: US
+                    ST: California
+                    O: eBay, Inc.
+                    CN: ebay.com
+                  issuer:
+                    C: GB
+                    ST: Greater Manchester
+                    L: Salford
+                    O: Sectigo Limited
+                    CN: Sectigo RSA Organization Validation Secure Server CA
+                  subjectaltname: DNS:ebay.com, DNS:befr.ebay.be, DNS:benl.ebay.be, DNS:cafr.ebay.ca, DNS:e-bay.it, DNS:ebay.at, DNS:ebay.be, DNS:ebay.ca, DNS:ebay.ch, DNS:ebay.co.uk, DNS:ebay.com.au, DNS:ebay.com.hk, DNS:ebay.com.my, DNS:ebay.com.sg, DNS:ebay.de, DNS:ebay.es, DNS:ebay.fr, DNS:ebay.ie, DNS:ebay.in, DNS:ebay.it, DNS:ebay.nl, DNS:ebay.ph, DNS:ebay.pl, DNS:ebay.us, DNS:ebay.vn
+                  infoAccess:
+                    CA Issuers - URI:
+                    - http://crt.sectigo.com/SectigoRSAOrganizationValidationSecureServerCA.crt
+                    OCSP - URI:
+                    - http://ocsp.sectigo.com
+                  ca: false
+                  bits: 2048
+                  valid_from: Jan  8 00:00:00 2025 GMT
+                  valid_to: Jan  8 23:59:59 2026 GMT
+                  serialNumber: A89BCEBA167A33593AD3202C7FE2C420
+                  domain: ebay.com
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
